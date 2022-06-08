@@ -1,23 +1,64 @@
-# Next.js + Tailwind CSS Example
+# **Lab: Welcome to React, Next.js & TailwindCSS**
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This lab shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with [Next.js.](https://nextjs.org/) It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
 
-## Deploy your own
+<br>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
 
-## How to use
+## **Practical Steps**
 
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-# or
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+1. Go to [Next.js.](https://nextjs.org/) website and choose examples ---> styling ---> with-tailwindcss
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+2. Execute: ```npx create-next-app --example with-tailwindcss <app name>```
+
+3. Cd into the app 
+
+
+
+4. Go into "*pages*" folder and delete the "api" folder.
+	
+    - Change the extension of:
+
+            _app.tsx ---> _app.js 
+
+            index.tsx---> index.js
+
+
+
+
+
+5. Go to "*tsconfig.json*" and change:
+
+    ```
+    
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_app.js", "pages/index.js"],
+
+    to:
+
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js",  "**/*.jsx", "pages/_app.js", "pages/index.js"],
+
+    ```
+
+6. Delete everything in "**index,js**" except for:```export default Home```
+
+7. Delete the unnecessary typescript syntax from "**index.js**" and "*_app.js*" 
+
+
+8. This step is done to separate components, rather than keep them all in "*index.js*";
+
+	in "*pages*" folder, create a new folder "*components*", 
+	inside "components" create ---> all the necessary components:
+
+        - "*Header*"
+        - "*Footer*"
+        - "*Main*" contains <form>
+
+
+9. Write the functionally and styling in each component, not forgetting to import the functions into "*index.js*".
+
+10. To run the server using npm, execute: ```npm run dev```
+
