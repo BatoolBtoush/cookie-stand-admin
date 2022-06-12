@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from './components/Header'
 import CreateForm from './components/CreateForm'
+import Main from './components/Main'
 import Footer from './components/Footer'
 import { useState } from 'react'
 
@@ -13,6 +14,8 @@ function Home() {
     setCounter(counter + 1)
   }
 
+    
+
   return (
     <div>
       <Head>
@@ -20,6 +23,7 @@ function Home() {
       </Head>
       <Header />
       <CreateForm locationsHandler = {locationsHandler}/>
+      <Main />
       <Footer counter={counter} />
 
     </div>
