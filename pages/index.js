@@ -1,10 +1,10 @@
-import Head from 'next/head'
+import Head from './components/Head'
 import Header from './components/Header'
 import CreateForm from './components/CreateForm'
 import Main from './components/Main'
-import ReportTable from './components/ReportTable'
 import Footer from './components/Footer'
 import { useState } from 'react'
+import ReportTable from './components/ReportTable'
 
 
 function Home() {
@@ -17,9 +17,7 @@ function Home() {
     
     let forTable = {
       location: e.target.location.value,
-      minCustomer: e.target.minCustomer.value,
-      maxCustomer: e.target.maxCustomer.value,
-      avgCookie: e.target.avgCookie.value
+
       
     };
     setLocations([...locations, forTable])
@@ -35,13 +33,11 @@ function Home() {
 
   return (
     <div>
-      <Head>
-        <title>Cookie Stand Admin App</title>
-      </Head>
+      <Head />
       <Header />
-      <CreateForm locationsHandler = {locationsHandler}/>
+      <CreateForm locationsHandler = {locationsHandler}/> 
       <Main />
-      <ReportTable locations = {locations} />
+      { counter > 0 ? <ReportTable locations = {locations} /> : <h1  className="text-center text-bold">No Cookie Stands Available</h1>}
       <Footer counter={counter} />
 
     </div>
